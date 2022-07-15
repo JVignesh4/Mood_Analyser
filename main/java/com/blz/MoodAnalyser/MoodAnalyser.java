@@ -5,13 +5,14 @@ public class MoodAnalyser {
 
     public static void main(String[] args) {
         System.out.println("Welcome To Mood Analyser");
+
     }
 
     /*creating a function for checking the mood Happy or Sad
     input we are passing some String message
     output the mood is Happy or sad will get.*/
 
-    public MoodAnalyser(){
+    public MoodAnalyser() {
     }
 
     public MoodAnalyser(String message) {
@@ -26,9 +27,13 @@ public class MoodAnalyser {
     }
 
     public String analyseMood() {
-        if (message.contains("Happy"))
+        try {
+            if (message.contains("Happy"))
+                return "Sad";
+            else
+                return "Happy";
+        } catch (NullPointerException e) {
             return "Sad";
-        else
-            return "Happy";
+        }
     }
 }
